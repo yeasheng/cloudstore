@@ -1,0 +1,29 @@
+server:
+  port: 8001 #端口
+
+#mybatis-plus
+mybatis-plus:
+  global-config:
+    banner: false
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 日志
+
+
+#spring的配置
+spring:
+  application:
+    name: store-product-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource #数据源
+    url: jdbc:mysql://localhost:3306/cloudstore?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    druid:
+      initial-size: 5 #连接池初始化大小
+      min-idle: 10 #最小空闲连接数
+      max-active: 20 #最大连接数
+      web-stat-filter:
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #不统计这些请求数据
+      stat-view-servlet: #访问监控网页的登录用户名和密码
+        login-username: druid
+        login-password: druid
