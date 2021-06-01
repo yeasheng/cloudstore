@@ -1,13 +1,12 @@
 server:
-  port: 8001 #端口
+  port: 7070
 
-#mybatis-plus
-mybatis-plus:
-  global-config:
-    banner: false
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 日志
-
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9090/eureka
+    register-with-eureka: true
+    fetch-registry: true
 
 #spring的配置
 spring:
@@ -27,3 +26,10 @@ spring:
       stat-view-servlet: #访问监控网页的登录用户名和密码
         login-username: druid
         login-password: druid
+
+#mybatis-plus
+mybatis-plus:
+  global-config:
+    banner: false
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 日志
