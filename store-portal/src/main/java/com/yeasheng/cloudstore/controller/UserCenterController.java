@@ -40,7 +40,7 @@ public class UserCenterController {
         String ip = instanceInfo.getHost();
         //获取port
         int port = instanceInfo.getPort();
-        String url  ="http://"+ip+":"+port+"/order/data/getTodayFinishOrderNum/"+id;
+        String url  ="http://store-product-service/order/data/getTodayFinishOrderNum/"+id;
         System.out.println("请求URL："+url);
         return restTemplate.getForObject(url, Integer.class);
     }
